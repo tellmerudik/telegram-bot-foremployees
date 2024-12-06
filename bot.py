@@ -1,5 +1,5 @@
-import os
 import logging
+import os
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, CallbackContext
 
@@ -18,7 +18,7 @@ async def echo(update: Update, context: CallbackContext) -> None:
     await update.message.reply_text(f"Вы ввели: {user_input}")
 
 if __name__ == '__main__':
-  application = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
+    application = ApplicationBuilder().token(os.getenv("BOT_TOKEN")).build()
 
     application.add_handler(CommandHandler("start", start))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
