@@ -7,7 +7,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 gc = gspread.authorize(credentials)
-sheet = gc.open_by_url("ВСТАВЬ ССЫЛКУ НА ГУГЛ ТАБЛИЦУ").sheet1
+sheet = gc.open_by_url("https://docs.google.com/spreadsheets/d/1OgGRQ51c1XYxizrjvFXHTNGoyrm3ZFpc6kSbz2RdqcQ/edit?usp=sharing").sheet1
 
 # Глобальные переменные
 user_data = {}
